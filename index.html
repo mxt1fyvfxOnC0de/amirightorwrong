@@ -33,7 +33,6 @@
     cursor: default;
   }
 
-  /* Cursor glow that follows mouse */
   body::after {
     content: '';
     position: fixed;
@@ -73,7 +72,6 @@
     100% { transform: translate(0,0) rotate(360deg); }
   }
 
-  /* ── CARD ── */
   .card {
     position: relative; z-index: 10;
     width: 100%; max-width: 560px;
@@ -93,201 +91,61 @@
     background: rgba(255,255,255,0.15);
   }
 
-  /* ── LOGO ROW ── */
-  .logo-row {
-    display: flex; align-items: center; gap: 12px; margin-bottom: 32px;
-    cursor: pointer;
-    width: fit-content;
-  }
-  .logo-icon {
-    width: 44px; height: 44px; border-radius: 14px;
-    background: linear-gradient(135deg, #0a84ff, #5e5ce6);
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 8px 24px rgba(10,132,255,0.45);
-    font-size: 22px;
-    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease, border-radius 0.35s ease, background 0.3s ease;
-  }
-  .logo-row:hover .logo-icon {
-    transform: rotate(-10deg) scale(1.18);
-    box-shadow: 0 14px 40px rgba(10,132,255,0.7);
-    border-radius: 20px;
-    background: linear-gradient(135deg, #1a8fff, #7e7cf0);
-  }
-  h1 {
-    font-size: 28px; font-weight: 700; letter-spacing: -0.5px;
-    color: var(--text);
-    transition: letter-spacing 0.3s ease, color 0.3s ease;
-  }
+  .logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; cursor: pointer; width: fit-content; }
+  .logo-icon { width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, #0a84ff, #5e5ce6); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(10,132,255,0.45); font-size: 22px; transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease, border-radius 0.35s ease, background 0.3s ease; }
+  .logo-row:hover .logo-icon { transform: rotate(-10deg) scale(1.18); box-shadow: 0 14px 40px rgba(10,132,255,0.7); border-radius: 20px; background: linear-gradient(135deg, #1a8fff, #7e7cf0); }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); transition: letter-spacing 0.3s ease; }
   .logo-row:hover h1 { letter-spacing: 0.1px; }
-  h1 span {
-    color: var(--accent);
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), text-shadow 0.3s ease;
-  }
-  .logo-row:hover h1 span {
-    text-shadow: 0 0 24px rgba(10,132,255,0.7);
-    transform: scale(1.06);
-  }
+  h1 span { color: var(--accent); display: inline-block; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), text-shadow 0.3s ease; }
+  .logo-row:hover h1 span { text-shadow: 0 0 24px rgba(10,132,255,0.7); transform: scale(1.06); }
 
-  /* ── SUBTITLE ── */
-  .subtitle {
-    font-size: 14px; color: var(--text-dim); margin-top: 4px; margin-bottom: 28px;
-    font-weight: 400; letter-spacing: 0.1px;
-    transition: color 0.3s ease, letter-spacing 0.3s ease;
-    cursor: default;
-  }
+  .subtitle { font-size: 14px; color: var(--text-dim); margin-top: 4px; margin-bottom: 28px; font-weight: 400; letter-spacing: 0.1px; transition: color 0.3s ease, letter-spacing 0.3s ease; cursor: default; }
   .subtitle:hover { color: rgba(255,255,255,0.82); letter-spacing: 0.3px; }
 
-  /* ── LABELS ── */
-  label {
-    display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.8px;
-    text-transform: uppercase; color: var(--text-dim); margin-bottom: 10px;
-    cursor: default;
-    transition: color 0.25s ease, letter-spacing 0.3s ease;
-  }
+  label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 10px; cursor: default; transition: color 0.25s ease, letter-spacing 0.3s ease; }
   label:hover { color: rgba(255,255,255,0.85); letter-spacing: 1.2px; }
 
-  /* ── TEXTAREAS ── */
-  textarea {
-    width: 100%;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 18px;
-    color: var(--text);
-    font-size: 16px; font-family: inherit;
-    padding: 18px 20px;
-    resize: none;
-    outline: none;
-    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.34,1.2,0.64,1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    cursor: text;
-  }
-  textarea::placeholder { color: rgba(255,255,255,0.3); transition: color 0.3s ease, letter-spacing 0.3s ease; }
-  textarea:hover {
-    border-color: rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-  }
-  textarea:hover::placeholder { color: rgba(255,255,255,0.5); letter-spacing: 0.2px; }
-  textarea:focus {
-    border-color: rgba(10,132,255,0.65);
-    background: rgba(255,255,255,0.11);
-    box-shadow: 0 0 0 3px rgba(10,132,255,0.2), 0 10px 28px rgba(0,0,0,0.25);
-    transform: translateY(-2px);
-  }
+  textarea { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 18px; color: var(--text); font-size: 16px; font-family: inherit; padding: 18px 20px; resize: none; outline: none; transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.34,1.2,0.64,1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); cursor: text; }
+  textarea::placeholder { color: rgba(255,255,255,0.3); transition: color 0.3s ease; }
+  textarea:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+  textarea:hover::placeholder { color: rgba(255,255,255,0.5); }
+  textarea:focus { border-color: rgba(10,132,255,0.65); background: rgba(255,255,255,0.11); box-shadow: 0 0 0 3px rgba(10,132,255,0.2), 0 10px 28px rgba(0,0,0,0.25); transform: translateY(-2px); }
   #claim { height: 100px; }
   #reasoning { height: 120px; }
 
-  /* ── BUTTONS ── */
-  .btn {
-    width: 100%; margin-top: 18px; padding: 17px;
-    border: none; border-radius: 18px; cursor: pointer;
-    font-size: 17px; font-weight: 600; letter-spacing: -0.2px;
-    font-family: inherit;
-    transition: transform 0.25s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.25s ease, letter-spacing 0.25s ease, background 0.25s ease;
-    position: relative; overflow: hidden;
-  }
-  /* Shimmer sweep */
-  .btn::before {
-    content: '';
-    position: absolute; top: 0; left: -120%;
-    width: 60%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-    transition: left 0.55s ease;
-    pointer-events: none;
-  }
+  .btn { width: 100%; margin-top: 18px; padding: 17px; border: none; border-radius: 18px; cursor: pointer; font-size: 17px; font-weight: 600; letter-spacing: -0.2px; font-family: inherit; transition: transform 0.25s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.25s ease, letter-spacing 0.25s ease, background 0.25s ease; position: relative; overflow: hidden; }
+  .btn::before { content: ''; position: absolute; top: 0; left: -120%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent); transition: left 0.55s ease; pointer-events: none; }
   .btn:hover::before { left: 160%; }
-
-  .btn-primary {
-    background: linear-gradient(135deg, #0a84ff, #5e5ce6);
-    color: #fff;
-    box-shadow: 0 8px 32px rgba(10,132,255,0.4);
-  }
-  .btn-primary:hover {
-    transform: translateY(-4px) scale(1.015);
-    box-shadow: 0 18px 52px rgba(10,132,255,0.65), 0 0 40px rgba(94,92,230,0.35);
-    background: linear-gradient(135deg, #1e8fff, #706ef0);
-    letter-spacing: 0.2px;
-  }
+  .btn-primary { background: linear-gradient(135deg, #0a84ff, #5e5ce6); color: #fff; box-shadow: 0 8px 32px rgba(10,132,255,0.4); }
+  .btn-primary:hover { transform: translateY(-4px) scale(1.015); box-shadow: 0 18px 52px rgba(10,132,255,0.65), 0 0 40px rgba(94,92,230,0.35); background: linear-gradient(135deg, #1e8fff, #706ef0); letter-spacing: 0.2px; }
   .btn-primary:active { transform: translateY(0) scale(0.98); box-shadow: 0 4px 16px rgba(10,132,255,0.3); }
   .btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
   .btn-primary:disabled:hover { transform: none; box-shadow: 0 8px 32px rgba(10,132,255,0.4); }
 
-  /* ── STEP DOTS ── */
-  .step-indicator {
-    display: flex; gap: 8px; align-items: center; margin-bottom: 22px;
-  }
-  .step {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
-    cursor: pointer;
-  }
+  .step-indicator { display: flex; gap: 8px; align-items: center; margin-bottom: 22px; }
+  .step { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1); cursor: pointer; }
   .step:hover { background: rgba(255,255,255,0.55); transform: scale(1.5); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
   .step.active { background: var(--accent); box-shadow: 0 0 10px rgba(10,132,255,0.6); width: 24px; border-radius: 4px; }
   .step.active:hover { box-shadow: 0 0 22px rgba(10,132,255,1); transform: scaleY(1.4) scaleX(1.05); }
   .step.done { background: var(--accent2); border-radius: 50%; width: 8px; }
   .step.done:hover { box-shadow: 0 0 16px rgba(48,209,88,0.8); transform: scale(1.5); }
 
-  /* ── DIVIDER ── */
-  .divider {
-    height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0;
-    transition: background 0.3s ease, height 0.3s ease;
-    cursor: default;
-  }
+  .divider { height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0; transition: background 0.3s ease, height 0.3s ease; cursor: default; }
   .divider:hover { background: rgba(255,255,255,0.28); height: 2px; }
 
-  /* ── REASONING PANEL ── */
-  .reasoning-panel {
-    overflow: hidden; max-height: 0; opacity: 0;
-    transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease, margin 0.4s ease;
-    margin-top: 0;
-  }
+  .reasoning-panel { overflow: hidden; max-height: 0; opacity: 0; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease, margin 0.4s ease; margin-top: 0; }
   .reasoning-panel.open { max-height: 400px; opacity: 1; margin-top: 22px; }
 
-  /* ── RESULT OVERLAY ── */
-  .result-overlay {
-    position: fixed; inset: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: center; padding: 24px;
-    backdrop-filter: blur(40px) saturate(200%);
-    -webkit-backdrop-filter: blur(40px) saturate(200%);
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.5s ease;
-  }
+  .result-overlay { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 24px; backdrop-filter: blur(40px) saturate(200%); -webkit-backdrop-filter: blur(40px) saturate(200%); opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
   .result-overlay.show { opacity: 1; pointer-events: all; }
   .result-overlay.right-bg { background: rgba(0,20,0,0.72); }
   .result-overlay.wrong-bg { background: rgba(30,0,0,0.72); }
 
-  /* ── RESULT CARD ── */
-  .result-card {
-    position: relative;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 36px;
-    backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
-    box-shadow: 0 40px 100px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
-    padding: 52px 44px 44px;
-    max-width: 460px; width: 100%; text-align: center;
-    transform: scale(0.85) translateY(30px);
-    transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease, border-color 0.3s ease, background 0.3s ease;
-  }
+  .result-card { position: relative; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 36px; backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); box-shadow: 0 40px 100px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.3); padding: 52px 44px 44px; max-width: 460px; width: 100%; text-align: center; transform: scale(0.85) translateY(30px); transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease, border-color 0.3s ease, background 0.3s ease; }
   .result-overlay.show .result-card { transform: scale(1) translateY(0); }
-  .result-card:hover {
-    box-shadow: 0 65px 150px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.45);
-    border-color: rgba(255,255,255,0.35);
-    transform: scale(1.015) translateY(-3px);
-    background: rgba(255,255,255,0.14);
-  }
+  .result-card:hover { box-shadow: 0 65px 150px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.45); border-color: rgba(255,255,255,0.35); transform: scale(1.015) translateY(-3px); background: rgba(255,255,255,0.14); }
 
-  /* ── VERDICT ICON ── */
-  .verdict-icon {
-    font-size: 72px; line-height: 1; margin-bottom: 20px; display: block;
-    animation: pop 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.2s both;
-    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), filter 0.3s ease;
-    cursor: default;
-  }
+  .verdict-icon { font-size: 72px; line-height: 1; margin-bottom: 20px; display: block; animation: pop 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.2s both; transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), filter 0.3s ease; cursor: default; }
   .verdict-icon:hover { transform: scale(1.25) rotate(8deg); filter: drop-shadow(0 0 24px rgba(255,255,255,0.5)); }
 
   @keyframes pop {
@@ -295,62 +153,21 @@
     to   { transform: scale(1) rotate(0deg); opacity: 1; }
   }
 
-  /* ── VERDICT LABEL ── */
-  .verdict-label {
-    font-size: 52px; font-weight: 800; letter-spacing: -2px; margin-bottom: 14px;
-    background: linear-gradient(135deg, currentColor, rgba(255,255,255,0.7));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    transition: letter-spacing 0.3s ease, filter 0.3s ease;
-    cursor: default;
-  }
+  .verdict-label { font-size: 52px; font-weight: 800; letter-spacing: -2px; margin-bottom: 14px; background: linear-gradient(135deg, currentColor, rgba(255,255,255,0.7)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: letter-spacing 0.3s ease, filter 0.3s ease; cursor: default; }
   .verdict-label:hover { letter-spacing: -0.5px; filter: brightness(1.2) drop-shadow(0 0 14px currentColor); }
   .verdict-label.right { color: var(--accent2); }
   .verdict-label.wrong { color: var(--wrong); }
 
-  /* ── VERDICT EXPLAIN ── */
-  .verdict-explain {
-    font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.75);
-    margin-bottom: 32px; font-weight: 400;
-    transition: color 0.3s ease, transform 0.3s ease;
-    cursor: default;
-  }
+  .verdict-explain { font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.75); margin-bottom: 32px; font-weight: 400; transition: color 0.3s ease, transform 0.3s ease; cursor: default; }
   .verdict-explain:hover { color: rgba(255,255,255,0.98); transform: scale(1.01); }
 
-  /* ── TRY AGAIN BUTTON ── */
-  .btn-again {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: var(--text);
-    border-radius: 14px; padding: 14px 32px;
-    font-size: 16px; font-weight: 600; cursor: pointer;
-    font-family: inherit;
-    transition: all 0.28s cubic-bezier(0.34,1.2,0.64,1);
-    position: relative; overflow: hidden;
-  }
-  .btn-again::before {
-    content: '';
-    position: absolute; top: 0; left: -120%;
-    width: 60%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
-    transition: left 0.55s ease; pointer-events: none;
-  }
-  .btn-again:hover {
-    background: rgba(255,255,255,0.24);
-    border-color: rgba(255,255,255,0.45);
-    transform: translateY(-4px) scale(1.04);
-    box-shadow: 0 14px 36px rgba(0,0,0,0.35);
-    letter-spacing: 0.3px;
-  }
+  .btn-again { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: var(--text); border-radius: 14px; padding: 14px 32px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.28s cubic-bezier(0.34,1.2,0.64,1); position: relative; overflow: hidden; }
+  .btn-again::before { content: ''; position: absolute; top: 0; left: -120%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent); transition: left 0.55s ease; pointer-events: none; }
+  .btn-again:hover { background: rgba(255,255,255,0.24); border-color: rgba(255,255,255,0.45); transform: translateY(-4px) scale(1.04); box-shadow: 0 14px 36px rgba(0,0,0,0.35); letter-spacing: 0.3px; }
   .btn-again:hover::before { left: 160%; }
   .btn-again:active { transform: translateY(0) scale(0.97); }
 
-  /* ── SPINNER ── */
-  .spinner {
-    display: inline-block; width: 22px; height: 22px;
-    border: 2.5px solid rgba(255,255,255,0.3); border-top-color: #fff;
-    border-radius: 50%; animation: spin 0.7s linear infinite;
-    vertical-align: middle; margin-right: 10px;
-  }
+  .spinner { display: inline-block; width: 22px; height: 22px; border: 2.5px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; vertical-align: middle; margin-right: 10px; }
   @keyframes spin { to { transform: rotate(360deg); } }
 </style>
 </head>
@@ -364,9 +181,7 @@
 <div class="card">
   <div class="logo-row">
     <div class="logo-icon">⚖️</div>
-    <div>
-      <h1>Am I <span>Right</span>?</h1>
-    </div>
+    <div><h1>Am I <span>Right</span>?</h1></div>
   </div>
   <p class="subtitle">State your claim. Share your reasoning. Get the verdict.</p>
 
@@ -378,7 +193,6 @@
 
   <label for="claim">Your Claim</label>
   <textarea id="claim" placeholder="e.g. Pineapple belongs on pizza…"></textarea>
-
   <button class="btn btn-primary" id="submitClaim">Submit Claim →</button>
 
   <div class="reasoning-panel" id="reasoningPanel">
@@ -399,7 +213,6 @@
 </div>
 
 <script>
-  // Mouse-tracking cursor glow
   document.addEventListener('mousemove', e => {
     document.body.style.setProperty('--mx', e.clientX + 'px');
     document.body.style.setProperty('--my', e.clientY + 'px');
@@ -443,51 +256,125 @@
     s2.classList.replace('active','done');
     s3.classList.add('active');
 
-    try {
-      const prompt = `You are a sharp, witty, and impartial judge. A user has made a claim and provided reasoning. You must decide: are they RIGHT or WRONG?
+    await new Promise(r => setTimeout(r, 900 + Math.random() * 600));
 
-CLAIM: "${claimEl.value.trim()}"
-REASONING: "${reasoningEl.value.trim()}"
-
-Respond ONLY with a valid JSON object (no markdown, no backticks) like:
-{"verdict":"RIGHT","explanation":"2-3 sentence punchy explanation of why they are right or wrong. Be direct, clever, and a little entertaining."}
-
-If the claim is genuinely subjective or opinion-based, judge based on the strength and logic of their reasoning alone.`;
-
-      const res  = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 1000,
-          messages: [{ role: "user", content: prompt }]
-        })
-      });
-      const data   = await res.json();
-      const raw    = data.content.map(b => b.text || '').join('');
-      const parsed = JSON.parse(raw.replace(/```json|```/g, '').trim());
-      showResult(parsed.verdict, parsed.explanation);
-    } catch {
-      const score = scoreLocal(reasoningEl.value.toLowerCase());
-      showResult(score > 0.5 ? 'RIGHT' : 'WRONG', score > 0.5
-        ? "Your reasoning holds up — the logic is sound and the argument is well-constructed."
-        : "The reasoning has some gaps. A stronger argument is needed to back this claim.");
-    }
+    const result = judge(claimEl.value.trim(), reasoningEl.value.trim());
+    showResult(result.verdict, result.explanation);
   });
 
-  function scoreLocal(r) {
-    let s = 0.5;
-    ['because','therefore','evidence','study','research','data','proven','fact','science','statistically','historically','logically','demonstrates','shows']
-      .forEach(w => r.includes(w) && (s += 0.06));
-    ['i think','i feel','i believe','everyone knows','obviously','clearly','just','trust me']
-      .forEach(w => r.includes(w) && (s -= 0.07));
-    if (r.length > 150) s += 0.08;
-    if (r.length < 30)  s -= 0.12;
-    return Math.max(0.05, Math.min(0.95, s));
+  // ─── THE JUDGE ────────────────────────────────────────────────────────────
+  function judge(claim, reasoning) {
+    const c = claim.toLowerCase();
+    const r = reasoning.toLowerCase();
+    const rLen = reasoning.trim().length;
+
+    // Known factual lies — always wrong
+    const lies = [
+      ['flat earth','earth is flat','earth flat'],
+      ['moon landing','fake','hoax','staged'],
+      ['vaccine','microchip','5g','poison','kill'],
+      ['earth','6000','young'],
+      ['dinosaur','fake','never existed'],
+    ];
+    for (const phrases of lies) {
+      if (phrases.some(p => c.includes(p) || r.includes(p))) {
+        return { verdict: 'WRONG', explanation: "This contradicts well-established science and evidence. No amount of reasoning changes the facts here — the data is overwhelmingly against this one." };
+      }
+    }
+
+    // Known factual truths — always right
+    const truths = [
+      ['earth','round','sphere','globe'],
+      ['sun','star','center','solar'],
+      ['water','h2o','hydrogen','oxygen'],
+      ['light','faster','sound'],
+      ['vaccine','safe','effective','immunity'],
+    ];
+    for (const words of truths) {
+      if (words.filter(w => c.includes(w) || r.includes(w)).length >= 2) {
+        return { verdict: 'RIGHT', explanation: "Yep, the science and evidence firmly back you up on this one. Your reasoning aligns with what experts and data consistently show." };
+      }
+    }
+
+    // Opinion/subjective claims — judge on reasoning quality
+    const opinionMarkers = ['better','best','worst','should','prefer','favorite','favourite','opinion','think','feel','believe','love','hate','like','dislike','more fun','tastier','prettier','cooler','nicer'];
+    const isOpinion = opinionMarkers.some(w => c.includes(w));
+
+    const score = reasoningQuality(r, rLen);
+
+    if (isOpinion) {
+      if (score >= 0) {
+        const flavors = [
+          "For a subjective take, your reasoning is solid — you've backed your opinion with enough logic to make it defensible.",
+          "Opinion noted, and honestly? You argued it well. The reasoning holds up even if others might disagree.",
+          "Subjective claims live and die by their reasoning, and yours passes the test. Well argued.",
+          "You can't prove taste, but you can argue it convincingly — and you did.",
+        ];
+        return { verdict: 'RIGHT', explanation: flavors[Math.floor(Math.random() * flavors.length)] };
+      } else {
+        return { verdict: 'WRONG', explanation: "With opinion-based claims, the reasoning is everything — and yours needs a bit more substance. Try explaining *why* you feel this way beyond just saying so." };
+      }
+    }
+
+    if (score >= 0) {
+      const positives = [
+        "Your argument is well-constructed and the logic checks out. You've thought this through.",
+        "Solid reasoning — you've made a coherent case and it holds up under scrutiny.",
+        "The logic you've laid out supports your claim. Hard to argue with that.",
+        "You came prepared. The reasoning is clear, structured, and makes a strong case.",
+      ];
+      return { verdict: 'RIGHT', explanation: positives[Math.floor(Math.random() * positives.length)] };
+    } else {
+      const negatives = [
+        "The claim might have merit, but the reasoning doesn't quite seal the deal yet. Add more specifics.",
+        "You're making a statement, but the 'why' behind it needs more development to be convincing.",
+        "Interesting position — but the argument could use more supporting detail to really land.",
+      ];
+      return { verdict: 'WRONG', explanation: negatives[Math.floor(Math.random() * negatives.length)] };
+    }
   }
 
+  function reasoningQuality(r, rLen) {
+    let score = 0;
+
+    // Length matters a lot — more words = more thought
+    if (rLen >= 200) score += 4;
+    else if (rLen >= 100) score += 3;
+    else if (rLen >= 60)  score += 2;
+    else if (rLen >= 30)  score += 1;
+    else score -= 3;
+
+    // Logical connectives
+    ['because','therefore','since','as a result','which means','this shows','this proves','consequently','thus','hence','due to','given that','considering','in fact','for example','for instance','such as','notably','specifically','in particular']
+      .forEach(w => { if (r.includes(w)) score += 1; });
+
+    // Evidence language
+    ['research','study','studies','data','statistics','evidence','proven','science','expert','according to','survey','report','found that','shows that','demonstrates','statistically','historically','documented']
+      .forEach(w => { if (r.includes(w)) score += 1.5; });
+
+    // Weak language — only minor penalty
+    ['everyone knows','obviously','clearly','just trust me','its obvious','common sense','always been']
+      .forEach(w => { if (r.includes(w)) score -= 0.5; });
+
+    // Only penalise "i think/feel" if that's literally ALL they wrote
+    const onlyPersonal = /^(i (think|feel|believe|just feel)|it is|it's)\b/.test(r.trim()) && rLen < 40;
+    if (onlyPersonal) score -= 2;
+
+    // Acknowledging counterarguments = smart
+    ['although','however','some might say','critics','on the other hand','even though','despite','admittedly','granted']
+      .forEach(w => { if (r.includes(w)) score += 1.5; });
+
+    // Multiple sentences = structured thought
+    const sentences = r.split(/[.!?]+/).filter(s => s.trim().length > 5).length;
+    if (sentences >= 4) score += 2;
+    else if (sentences >= 2) score += 1;
+
+    return score; // positive = RIGHT, negative = WRONG
+  }
+  // ─────────────────────────────────────────────────────────────────────────
+
   function showResult(verdict, explanation) {
-    const ok = verdict.toUpperCase() === 'RIGHT';
+    const ok = verdict === 'RIGHT';
     verdictIcon.textContent  = ok ? '✅' : '❌';
     verdictLabel.textContent = ok ? "YOU'RE RIGHT" : "YOU'RE WRONG";
     verdictLabel.className   = 'verdict-label ' + (ok ? 'right' : 'wrong');
